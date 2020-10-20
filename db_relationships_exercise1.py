@@ -169,5 +169,4 @@ def drop_orders_table():
     with DatabaseContextManager("ordersdb") as ordersdb:
         ordersdb.execute(query)
 
-
 # ------------------------------------------------------------------------------------------------------------#
