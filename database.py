@@ -53,7 +53,7 @@ def create_table_library():
 
 # Create function
 def create_book(title: str, author: str, pages: int, library_id: int):
-    query = f"""INSERT INTO Books(title, author, pages, library_id) VALUES(?,?,?,?)"""
+    query = """INSERT INTO Books(title, author, pages, library_id) VALUES(?,?,?,?)"""
     # Question marks are used in initial query to have placeholders for upcoming parameters.
     # (This is used to protect ourselves from SQL Injection attacks)
     parameters = [title, author, pages, library_id]
@@ -140,3 +140,5 @@ def drop_table():
     query = """DROP TABLE Library"""
     with DatabaseContextManager("db") as db:
         db.execute(query)
+
+
